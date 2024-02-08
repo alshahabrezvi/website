@@ -16,22 +16,14 @@
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
-        async function postData() {
-
-            try {
-                const {
-                    data
-                } = await axios.post("https://country-block.vercel.app/api/geo-info");
-
-                console.log('Response from server:', data);
-                
-            } catch (error) {
-                console.log(error)
-            }
-
+        async function data() {
+            const {
+                data
+            } = await axios.get('http://localhost:3000/api/geo-info')
+            console.log(data)
         }
 
-        postData();
+        data()
     </script>
 
 
