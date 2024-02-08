@@ -4,44 +4,6 @@
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ENTEYXX4X0"></script>
-    <script>
-// pages/api/example.js
-
-var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-
-var raw = JSON.stringify({
-});
-
-var requestOptions = {
-  method: 'POST',
-  mode: 'no-cors',
-  headers: myHeaders,
-  body: raw,
-  redirect: 'follow'
-};
-
-fetch("https://country-block.vercel.app/api/geo-info", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log("result"))
-  .catch(error => console.log('error', error));
-
-
-        const num = false;
-
-        if (num) {
-            window.dataLayer = window.dataLayer || [];
-
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
-
-            gtag('config', 'G-ENTEYXX4X0');
-        } else {
-            console.log("Odd");
-        }
-    </script>
 
 
     <meta charset="UTF-8">
@@ -51,6 +13,24 @@ fetch("https://country-block.vercel.app/api/geo-info", requestOptions)
 
 <body>
     hi everyone
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        async function postData() {
+
+            const {
+                data
+            } = await axios.post("https://country-block.vercel.app/api/geo-info");
+
+
+            console.log('Response from server:', data);
+
+        }
+
+        postData();
+    </script>
+
+
 </body>
 
 </html>
