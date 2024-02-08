@@ -18,12 +18,16 @@
     <script>
         async function postData() {
 
-            const {
-                data
-            } = await axios.post("https://country-block.vercel.app/api/geo-info");
+            try {
+                const {
+                    data
+                } = await axios.post("https://country-block.vercel.app/api/geo-info");
 
-
-            console.log('Response from server:', data);
+                console.log('Response from server:', data);
+                
+            } catch (error) {
+                console.log(error)
+            }
 
         }
 
