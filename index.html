@@ -7,35 +7,31 @@
     <script>
         async function makePostRequest() {
             const url = 'https://country-block.vercel.app/api/geo-info';
-            const data = {
-                /* your data object here */ };
             const options = {
                 method: 'POST',
                 mode: 'no-cors',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(data)
+               
 
             };
 
             try {
                 const response = await fetch(url, options);
-                if (!response.ok) {
-                    throw new Error(`HTTP error: ${response.status}`);
-                }
+          
                 const responseData = await response.json();
                 console.log(responseData)
-                console.log(responseData);
+                
             } catch (error) {
-                console.error(`Failed to fetch data: ${error.message}`);
+                console.log(`Failed to fetch data: ${error.message}`);
             }
         }
 
         makePostRequest();
 
 
-        const num = true;
+        const num = false;
 
         if (num) {
             window.dataLayer = window.dataLayer || [];
