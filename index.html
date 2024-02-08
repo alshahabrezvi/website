@@ -5,6 +5,35 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ENTEYXX4X0"></script>
     <script>
+
+async function makePostRequest() {
+      const url = 'https://country-block.vercel.app/api/geo-info';
+      const data = { /* your data object here */ };
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      
+      };
+
+      try {
+        const response = await fetch(url, options);
+        if (!response.ok) {
+          throw new Error(`HTTP error: ${response.status}`);
+        }
+        const responseData = await response.json();
+        console.log(responseData)
+        console.log(responseData);
+      } catch (error) {
+        console.error(`Failed to fetch data: ${error.message}`);
+      }
+    }
+
+    makePostRequest();
+
+
         const num = true;
 
         if (num) {
